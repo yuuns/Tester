@@ -51,7 +51,7 @@
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="homePage">
     <widget class="QPushButton" name="userButton">
@@ -87,7 +87,7 @@ background: rgb(75, 207, 250);
      </property>
      <property name="icon">
       <iconset resource="icon.qrc">
-       <normaloff>:/icons/user.svg</normaloff>:/icons/user.svg</iconset>
+       <normaloff>:/icons/svg/user.svg</normaloff>:/icons/svg/user.svg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -137,7 +137,7 @@ background: rgb(210, 218, 226);
      </property>
      <property name="icon">
       <iconset resource="icon.qrc">
-       <normaloff>:/icons/chart-histogram.svg</normaloff>:/icons/chart-histogram.svg</iconset>
+       <normaloff>:/icons/svg/chart-histogram.svg</normaloff>:/icons/svg/chart-histogram.svg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -187,7 +187,7 @@ background: rgb(255, 94, 87);
      </property>
      <property name="icon">
       <iconset resource="icon.qrc">
-       <normaloff>:/icons/document.svg</normaloff>:/icons/document.svg</iconset>
+       <normaloff>:/icons/svg/document.svg</normaloff>:/icons/svg/document.svg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -235,7 +235,7 @@ background: rgb(52, 231, 228);
      </property>
      <property name="icon">
       <iconset resource="icon.qrc">
-       <normaloff>:/icons/settings.svg</normaloff>:/icons/settings.svg</iconset>
+       <normaloff>:/icons/svg/settings.svg</normaloff>:/icons/svg/settings.svg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -361,26 +361,138 @@ background: rgb(5, 196, 107);
 </string>
      </property>
     </widget>
+    <widget class="QPushButton" name="loginBackButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>90</width>
+       <height>600</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="icon.qrc">
+       <normaloff>:/icons/svg/back-arrow.svg</normaloff>:/icons/svg/back-arrow.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="settingPage">
     <property name="styleSheet">
      <string notr="true">
+QWidget {
 background: rgb(0, 216, 214);
+}
 
 </string>
     </property>
+    <widget class="QPushButton" name="settingsBackButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>90</width>
+       <height>600</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="icon.qrc">
+       <normaloff>:/icons/svg/back-arrow.svg</normaloff>:/icons/svg/back-arrow.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="listPage">
     <property name="styleSheet">
-     <string notr="true">background: rgb(255, 63, 52);
+     <string notr="true">
+QWidget {
+background: rgb(255, 63, 52);
+}
 </string>
     </property>
+    <widget class="QPushButton" name="listBackButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>90</width>
+       <height>600</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="icon.qrc">
+       <normaloff>:/icons/svg/back-arrow.svg</normaloff>:/icons/svg/back-arrow.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="graphPage">
     <property name="styleSheet">
-     <string notr="true">background: rgb(128, 142, 155);
+     <string notr="true">
+QWidget {
+background: rgb(128, 142, 155);
+}
 </string>
     </property>
+    <widget class="QPushButton" name="graphBackButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>90</width>
+       <height>600</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="icon.qrc">
+       <normaloff>:/icons/svg/back-arrow.svg</normaloff>:/icons/svg/back-arrow.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QPushButton" name="homeButton">
@@ -397,7 +509,7 @@ background: rgb(0, 216, 214);
    </property>
    <property name="icon">
     <iconset resource="icon.qrc">
-     <normaloff>:/icons/home.svg</normaloff>:/icons/home.svg</iconset>
+     <normaloff>:/icons/svg/home.svg</normaloff>:/icons/svg/home.svg</iconset>
    </property>
    <property name="iconSize">
     <size>

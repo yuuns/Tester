@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:/Users/emre.akgul/AppData/Local/Temp/formmeybOy.ui'
+# Form implementation generated from reading ui file 'C:/Users/emre.akgul/AppData/Local/Temp/formZEsEAC.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.5
 #
@@ -44,7 +44,7 @@ class Ui_mainWindow(object):
 "}")
         self.userButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/user.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/icons/svg/user.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.userButton.setIcon(icon)
         self.userButton.setIconSize(QtCore.QSize(100, 100))
         self.userButton.setObjectName("userButton")
@@ -65,7 +65,7 @@ class Ui_mainWindow(object):
 "}")
         self.graphButton.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/chart-histogram.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/icons/svg/chart-histogram.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.graphButton.setIcon(icon1)
         self.graphButton.setIconSize(QtCore.QSize(100, 100))
         self.graphButton.setObjectName("graphButton")
@@ -86,7 +86,7 @@ class Ui_mainWindow(object):
 "}")
         self.listButton.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icons/document.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/icons/svg/document.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.listButton.setIcon(icon2)
         self.listButton.setIconSize(QtCore.QSize(100, 100))
         self.listButton.setObjectName("listButton")
@@ -105,7 +105,7 @@ class Ui_mainWindow(object):
 "}")
         self.settingsButton.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/icons/settings.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(":/icons/svg/settings.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.settingsButton.setIcon(icon3)
         self.settingsButton.setIconSize(QtCore.QSize(100, 100))
         self.settingsButton.setObjectName("settingsButton")
@@ -156,36 +156,74 @@ class Ui_mainWindow(object):
         self.logoQgraph.setStyleSheet("border: none;\n"
 "")
         self.logoQgraph.setObjectName("logoQgraph")
+        self.loginBackButton = QtWidgets.QPushButton(self.loginPage)
+        self.loginBackButton.setGeometry(QtCore.QRect(0, 0, 90, 600))
+        self.loginBackButton.setText("")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/icons/svg/back-arrow.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.loginBackButton.setIcon(icon4)
+        self.loginBackButton.setIconSize(QtCore.QSize(100, 100))
+        self.loginBackButton.setFlat(True)
+        self.loginBackButton.setObjectName("loginBackButton")
         self.stackedWidget.addWidget(self.loginPage)
         self.settingPage = QtWidgets.QWidget()
         self.settingPage.setStyleSheet("\n"
+"QWidget {\n"
 "background: rgb(0, 216, 214);\n"
+"}\n"
 "\n"
 "")
         self.settingPage.setObjectName("settingPage")
+        self.settingsBackButton = QtWidgets.QPushButton(self.settingPage)
+        self.settingsBackButton.setGeometry(QtCore.QRect(0, 0, 90, 600))
+        self.settingsBackButton.setText("")
+        self.settingsBackButton.setIcon(icon4)
+        self.settingsBackButton.setIconSize(QtCore.QSize(100, 100))
+        self.settingsBackButton.setFlat(True)
+        self.settingsBackButton.setObjectName("settingsBackButton")
         self.stackedWidget.addWidget(self.settingPage)
         self.listPage = QtWidgets.QWidget()
-        self.listPage.setStyleSheet("background: rgb(255, 63, 52);\n"
+        self.listPage.setStyleSheet("\n"
+"QWidget {\n"
+"background: rgb(255, 63, 52);\n"
+"}\n"
 "")
         self.listPage.setObjectName("listPage")
+        self.listBackButton = QtWidgets.QPushButton(self.listPage)
+        self.listBackButton.setGeometry(QtCore.QRect(0, 0, 90, 600))
+        self.listBackButton.setText("")
+        self.listBackButton.setIcon(icon4)
+        self.listBackButton.setIconSize(QtCore.QSize(100, 100))
+        self.listBackButton.setFlat(True)
+        self.listBackButton.setObjectName("listBackButton")
         self.stackedWidget.addWidget(self.listPage)
         self.graphPage = QtWidgets.QWidget()
-        self.graphPage.setStyleSheet("background: rgb(128, 142, 155);\n"
+        self.graphPage.setStyleSheet("\n"
+"QWidget {\n"
+"background: rgb(128, 142, 155);\n"
+"}\n"
 "")
         self.graphPage.setObjectName("graphPage")
+        self.graphBackButton = QtWidgets.QPushButton(self.graphPage)
+        self.graphBackButton.setGeometry(QtCore.QRect(0, 0, 90, 600))
+        self.graphBackButton.setText("")
+        self.graphBackButton.setIcon(icon4)
+        self.graphBackButton.setIconSize(QtCore.QSize(100, 100))
+        self.graphBackButton.setFlat(True)
+        self.graphBackButton.setObjectName("graphBackButton")
         self.stackedWidget.addWidget(self.graphPage)
         self.homeButton = QtWidgets.QPushButton(mainWindow)
         self.homeButton.setGeometry(QtCore.QRect(0, 0, 40, 40))
         self.homeButton.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/icons/home.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.homeButton.setIcon(icon4)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/icons/svg/home.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.homeButton.setIcon(icon5)
         self.homeButton.setIconSize(QtCore.QSize(40, 40))
         self.homeButton.setFlat(True)
         self.homeButton.setObjectName("homeButton")
 
         self.retranslateUi(mainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
     def retranslateUi(self, mainWindow):
