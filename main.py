@@ -73,7 +73,7 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    os.system('export DISPLAY=:0.0')
+    os.system('export DISPLAY=:0.0') # for vscode ssh connection
     main()
 
 
