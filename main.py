@@ -43,8 +43,8 @@ def main():
 
 
     ## Login page event ##############################################################################
-    ui.loginButton.clicked.connect(lambda: goPage(ui.homePage))
-    ui.newUserButton.clicked.connect(lambda: goPage(ui.homePage))
+    # ui.loginButton.clicked.connect(lambda: goPage(ui.homePage))
+    # ui.newUserButton.clicked.connect(lambda: goPage(ui.homePage))
     ui.loginBackButton.clicked.connect(lambda: goPage(ui.homePage))
 
     ## Settings page event ###########################################################################
