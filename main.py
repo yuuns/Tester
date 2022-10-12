@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
 from ui_form import (Ui_mainWindow)
 import os
 
+
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 def handleVisibleChanged():
     if not QtGui.QGuiApplication.inputMethod().isVisible():
@@ -55,7 +56,7 @@ def main():
 
     ## Main Functions  ####################################################################################
     def goPage(page):
-        print (str(page.text) + "Gecildi")
+        print (str(page) + "Gecildi")
         ui.stackedWidget.setCurrentWidget(page)
 
 
@@ -65,13 +66,14 @@ def main():
 
 
 
-    #MainWindow.showFullScreen() 
-    MainWindow.show() 
+    MainWindow.showFullScreen() 
+    #MainWindow.show() 
     sys.exit(app.exec_())
 
 
 if __name__ == "__main__":
     import sys
+    os.system('export DISPLAY=:0.0')
     main()
 
 
