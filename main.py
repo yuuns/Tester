@@ -35,6 +35,7 @@ def main():
 
     ## Home Page event ###############################################################################
     ui.homeButton.clicked.connect(lambda: goPage(ui.homePage))
+    ui.homeButton.setVisible(0)
     ui.userButton.clicked.connect(lambda: goPage(ui.loginPage))
     ui.settingsButton.clicked.connect(lambda: goPage(ui.settingPage))
     ui.listButton.clicked.connect(lambda: goPage(ui.listPage))
@@ -44,14 +45,17 @@ def main():
     ## Login page event ##############################################################################
     ui.loginButton.clicked.connect(lambda: goPage(ui.homePage))
     ui.newUserButton.clicked.connect(lambda: goPage(ui.homePage))
+    ui.loginBackButton.clicked.connect(lambda: goPage(ui.homePage))
 
     ## Settings page event ###########################################################################
-
+    ui.settingsBackButton.clicked.connect(lambda: goPage(ui.homePage))
 
     ## List page event ###############################################################################
 
+    ui.listBackButton.clicked.connect(lambda: goPage(ui.homePage))
 
     ## graph page event ##############################################################################
+    ui.graphBackButton.clicked.connect(lambda: goPage(ui.homePage))
 
 
 

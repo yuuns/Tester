@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:/Users/emre.akgul/AppData/Local/Temp/formZEsEAC.ui'
+# Form implementation generated from reading ui file 'C:/Users/emre.akgul/AppData/Local/Temp/formNpzKMU.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.5
 #
@@ -223,7 +223,7 @@ class Ui_mainWindow(object):
         self.homeButton.setObjectName("homeButton")
 
         self.retranslateUi(mainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
     def retranslateUi(self, mainWindow):
