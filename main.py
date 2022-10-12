@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
 from ui_form import (Ui_mainWindow)
 import os
-
+import loginMenu
 
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
