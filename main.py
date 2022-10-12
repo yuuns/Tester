@@ -52,7 +52,7 @@ def main():
 
     ## List page event ###############################################################################
 
-    ui.listBackButton.clicked.connect(lambda: goPage(ui.homePage))
+    ui.a.clicked.connect(lambda: goPage(ui.homePage))
 
     ## graph page event ##############################################################################
     ui.graphBackButton.clicked.connect(lambda: goPage(ui.homePage))
