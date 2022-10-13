@@ -1,10 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
 from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtGui import QPixmap
+
 from ui_form import (Ui_mainWindow)
 import os
 import loginMenu
 import sys
-
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
 
@@ -78,13 +79,17 @@ def main():
             ui.settingsButton.setEnabled(1)
             ui.listButton.setEnabled(1)
             ui.graphButton.setEnabled(1)
-            print("giriş başarılı")
             goPage(ui.homePage)
+
 
 
     ##################################################################################################
 
-
+    pix = QPixmap(":/icons/svg/logo.jpg")
+    item = QtWidgets.QGraphicsPixmapItem(pix)
+    scene = QtWidgets.QGraphicsScene()
+    scene.addItem(item)
+    ui.logoQgraph.setScene(scene)
 
     MainWindow.showFullScreen() 
     #MainWindow.show() 

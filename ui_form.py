@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:/Users/emre.akgul/AppData/Local/Temp/formNpzKMU.ui'
+# Form implementation generated from reading ui file 'C:/Users/emre.akgul/AppData/Local/Temp/formIBazXH.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.5
 #
@@ -116,20 +116,20 @@ class Ui_mainWindow(object):
 "}")
         self.loginPage.setObjectName("loginPage")
         self.usernameText = QtWidgets.QLineEdit(self.loginPage)
-        self.usernameText.setGeometry(QtCore.QRect(312, 300, 400, 45))
+        self.usernameText.setGeometry(QtCore.QRect(449, 78, 400, 45))
         self.usernameText.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.usernameText.setInputMask("")
         self.usernameText.setText("")
         self.usernameText.setFrame(False)
         self.usernameText.setObjectName("usernameText")
         self.userpasswordText = QtWidgets.QLineEdit(self.loginPage)
-        self.userpasswordText.setGeometry(QtCore.QRect(312, 350, 400, 45))
+        self.userpasswordText.setGeometry(QtCore.QRect(449, 128, 400, 45))
         self.userpasswordText.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.userpasswordText.setFrame(False)
         self.userpasswordText.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
         self.userpasswordText.setObjectName("userpasswordText")
         self.loginButton = QtWidgets.QPushButton(self.loginPage)
-        self.loginButton.setGeometry(QtCore.QRect(312, 400, 195, 45))
+        self.loginButton.setGeometry(QtCore.QRect(449, 178, 195, 45))
         self.loginButton.setStyleSheet("QPushButton {\n"
 "border: none;\n"
 "background: rgb(52, 231, 228);\n"
@@ -141,7 +141,7 @@ class Ui_mainWindow(object):
         self.loginButton.setFlat(False)
         self.loginButton.setObjectName("loginButton")
         self.newUserButton = QtWidgets.QPushButton(self.loginPage)
-        self.newUserButton.setGeometry(QtCore.QRect(517, 400, 195, 45))
+        self.newUserButton.setGeometry(QtCore.QRect(654, 178, 195, 45))
         self.newUserButton.setStyleSheet("QPushButton {\n"
 "border: none;\n"
 "background: rgb(11, 232, 129);\n"
@@ -152,7 +152,7 @@ class Ui_mainWindow(object):
 "}")
         self.newUserButton.setObjectName("newUserButton")
         self.logoQgraph = QtWidgets.QGraphicsView(self.loginPage)
-        self.logoQgraph.setGeometry(QtCore.QRect(412, 75, 200, 200))
+        self.logoQgraph.setGeometry(QtCore.QRect(110, 50, 269, 200))
         self.logoQgraph.setStyleSheet("border: none;\n"
 "")
         self.logoQgraph.setObjectName("logoQgraph")

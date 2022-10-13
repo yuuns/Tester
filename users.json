@@ -1,0 +1,20 @@
+{
+    "members": [
+        {
+            "username": "admin",
+            "password": "admin"
+        },
+        {
+            "username": "mamur",
+            "password": "1234"
+        },
+        {
+            "username": "ferel",
+            "password": "1234"
+        },
+        {
+            "username": "femas",
+            "password": "1234"
+        }
+    ]
+}
