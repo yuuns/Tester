@@ -1,7 +1,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 from ui_form import (Ui_mainWindow)
 import os
 import loginMenu
+import sys
 
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
@@ -19,7 +21,6 @@ def handleVisibleChanged():
                 return
 
 
-
 def main():
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -27,10 +28,14 @@ def main():
     ui = Ui_mainWindow()
     ui.setupUi(MainWindow)
 
+    ## Set disable other menu before login
+    ui.settingsButton.setEnabled(0)
+    ui.listButton.setEnabled(0)
+    ui.graphButton.setEnabled(0)
+
+
     ## Global Functions connections #########################################################################
     QtGui.QGuiApplication.inputMethod().visibleChanged.connect(handleVisibleChanged)
-
-
 
 
     ## Home Page event ###############################################################################
@@ -43,7 +48,9 @@ def main():
 
 
     ## Login page event ##############################################################################
-    # ui.loginButton.clicked.connect(lambda: goPage(ui.homePage))
+    ui.loginButton.clicked.connect(lambda: userStatus())
+
+
     # ui.newUserButton.clicked.connect(lambda: goPage(ui.homePage))
     ui.loginBackButton.clicked.connect(lambda: goPage(ui.homePage))
 
@@ -52,7 +59,7 @@ def main():
 
     ## List page event ###############################################################################
 
-    ui.a.clicked.connect(lambda: goPage(ui.homePage))
+    ui.listBackButton.clicked.connect(lambda: goPage(ui.homePage))
 
     ## graph page event ##############################################################################
     ui.graphBackButton.clicked.connect(lambda: goPage(ui.homePage))
@@ -65,7 +72,14 @@ def main():
         print (str(page) + "Gecildi")
         ui.stackedWidget.setCurrentWidget(page)
 
-
+    def userStatus():
+        status = loginMenu.login(MainWindow,ui.usernameText.text(),ui.userpasswordText.text())
+        if status == QMessageBox.Ok:
+            ui.settingsButton.setEnabled(1)
+            ui.listButton.setEnabled(1)
+            ui.graphButton.setEnabled(1)
+            print("giriş başarılı")
+            goPage(ui.homePage)
 
 
     ##################################################################################################
@@ -78,7 +92,6 @@ def main():
 
 
 if __name__ == "__main__":
-    import sys
     os.system('export DISPLAY=:0.0') # for vscode ssh connection
     main()
 
