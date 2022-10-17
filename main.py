@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtGui import QPixmap
 
-from ui_form import (Ui_mainWindow)
+from ui_form import Ui_mainWindow
 import os
 import loginMenu
 import sys
