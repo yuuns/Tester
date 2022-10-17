@@ -15,13 +15,25 @@ import json
 
 def Login(path,username,password):
 
-        path_to_json = path
-        with open(path_to_json, "r") as handler:
-             data = json.load(handler)
+    path_to_json = path
+    with open(path_to_json, "r") as handler:
+            data = json.load(handler)
 
-        for member in data['members']:
-            if member['username'] == username and member['password'] == password:
-                return True
-            else:
-                return False
+    for member in data['members']:
+        if member['username'] == username and member['password'] == password:
+            return True
+        else:
+            return False
+
+def saveJson():
+
+    return True
+
+def readJson(path,parameter):
+    path_to_json = path
+    with open(path_to_json, "r") as handler:
+            data = json.load(handler)
+    for member in data[parameter]:
+        print(member)
+    return(data[parameter])
 

@@ -1,0 +1,19 @@
+{
+    "settings": {
+      "ocak1": [{
+        "voltage": "voltage1",
+        "current": "10101010100",
+        "voltageDescription": "sdasfdsgfdgdfg",
+        "temp": "1010101010",
+        "tempDescription": "afdsfsdfsdfsd"
+      }
+      ],
+      "ocak2": [{
+        "voltage": "voltage2",
+        "current": "10101010100",
+        "voltageDescription": "sdasfdsgfdgdfg",
+        "temp": "1010101010",
+        "tempDescription": "afdsfsdfsdfsd"
+      }]
+    }
+  }

@@ -5,6 +5,7 @@ from PyQt5.QtGui import QPixmap
 from ui_form import Ui_mainWindow
 import os
 import loginMenu
+import settingsMenu
 import sys
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
@@ -57,7 +58,7 @@ def main():
 
     ## Settings page event ###########################################################################
     ui.settingsBackButton.clicked.connect(lambda: goPage(ui.homePage))
-
+    ui.getButton.clicked.connect(lambda: settingsMenu.popup(MainWindow))
     ## List page event ###############################################################################
 
     ui.listBackButton.clicked.connect(lambda: goPage(ui.homePage))
@@ -70,7 +71,7 @@ def main():
 
     ## Main Functions  ####################################################################################
     def goPage(page):
-        print (str(page) + "Gecildi")
+        print (str(page) + "    Gecildi")
         ui.stackedWidget.setCurrentWidget(page)
 
     def userStatus():
