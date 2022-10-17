@@ -8,8 +8,10 @@ def popup(self):
     name, ok = QInputDialog.getItem(self, "Kayıtlar", "Kayıt seçiniz",
                                     settings, editable=False)
     if ok:
-        print(settings[name])
-        
+        # print(settings[name])        
         return settings[name]
+    else:
+        return []
+
 
     

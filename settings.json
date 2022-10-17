@@ -1,19 +1,19 @@
 {
     "settings": {
       "ocak1": [{
-        "voltage": "voltage1",
-        "current": "10101010100",
-        "voltageDescription": "sdasfdsgfdgdfg",
-        "temp": "1010101010",
-        "tempDescription": "afdsfsdfsdfsd"
+        "voltage": [1,1,1,1,1,1,1,1,1,1,1],
+        "current": [1,1,1,1,1,1,1,1,1,1,1],
+        "voltageDescription": ["1","2","3","4","5","6","7","8","9","10","11"],
+        "temp": [1,1,1,1,1,1,1,1,1,1,1],
+        "tempDescription": ["1","2","3","4","5","6","7","8","9","10","11"]
       }
       ],
       "ocak2": [{
-        "voltage": "voltage2",
-        "current": "10101010100",
-        "voltageDescription": "sdasfdsgfdgdfg",
-        "temp": "1010101010",
-        "tempDescription": "afdsfsdfsdfsd"
+        "voltage": [1,1,1,1,1,1,1,1,1,1,1],
+        "current": [1,1,1,1,1,1,1,1,1,1,1],
+        "voltageDescription": ["1","2","3","4","5","6","7","8","9","10","11"],
+        "temp": [1,1,1,1,1,1,1,1,1,1,1],
+        "tempDescription": ["1","2","3","4","5","6","7","8","9","10","11"]
       }]
     }
   }

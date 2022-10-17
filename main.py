@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox,QLineEdit
 from PyQt5.QtGui import QPixmap
 
 from ui_form import Ui_mainWindow
@@ -31,7 +31,7 @@ def main():
     ui.setupUi(MainWindow)
 
     ## Set disable other menu before login
-    ui.settingsButton.setEnabled(0)
+    ui.settingsButton.setEnabled(1)
     ui.listButton.setEnabled(0)
     ui.graphButton.setEnabled(0)
 
@@ -58,7 +58,7 @@ def main():
 
     ## Settings page event ###########################################################################
     ui.settingsBackButton.clicked.connect(lambda: goPage(ui.homePage))
-    ui.getButton.clicked.connect(lambda: settingsMenu.popup(MainWindow))
+    ui.getButton.clicked.connect(lambda: getButton())
     ## List page event ###############################################################################
 
     ui.listBackButton.clicked.connect(lambda: goPage(ui.homePage))
@@ -82,7 +82,75 @@ def main():
             ui.graphButton.setEnabled(1)
             goPage(ui.homePage)
 
+    def getButton():
+        data = settingsMenu.popup(MainWindow)
+        voltage = data[0]["voltage"]
+        current = data[0]["current"]
+        voltageDescription = data[0]["voltageDescription"]
+        temp = data[0]["temp"]
+        tempDescription = data[0]["tempDescription"]
 
+        ui.voltageDescription1.setText(voltageDescription[0])
+        ui.voltageDescription2.setText(voltageDescription[1])
+        ui.voltageDescription3.setText(voltageDescription[2])
+        ui.voltageDescription4.setText(voltageDescription[3])
+        ui.voltageDescription5.setText(voltageDescription[4])
+        ui.voltageDescription6.setText(voltageDescription[5])
+        ui.voltageDescription7.setText(voltageDescription[6])
+        ui.voltageDescription8.setText(voltageDescription[7])
+        ui.voltageDescription9.setText(voltageDescription[8])
+        ui.voltageDescription10.setText(voltageDescription[9])
+        ui.voltageDescription11.setText(voltageDescription[10])
+      
+        ui.tempDescription1.setText(tempDescription[0])
+        ui.tempDescription2.setText(tempDescription[1])
+        ui.tempDescription3.setText(tempDescription[2])
+        ui.tempDescription4.setText(tempDescription[3])
+        ui.tempDescription5.setText(tempDescription[4])
+        ui.tempDescription6.setText(tempDescription[5])
+        ui.tempDescription7.setText(tempDescription[6])
+        ui.tempDescription8.setText(tempDescription[7])
+        ui.tempDescription9.setText(tempDescription[8])
+        ui.tempDescription10.setText(tempDescription[9])
+        ui.tempDescription11.setText(tempDescription[10])
+
+        ui.voltageProbe1Cb.setChecked(voltage[0])
+        ui.voltageProbe2Cb.setChecked(voltage[1])
+        ui.voltageProbe3Cb.setChecked(voltage[2])
+        ui.voltageProbe4Cb.setChecked(voltage[3])
+        ui.voltageProbe5Cb.setChecked(voltage[4])
+        ui.voltageProbe6Cb.setChecked(voltage[5])
+        ui.voltageProbe7Cb.setChecked(voltage[6])
+        ui.voltageProbe8Cb.setChecked(voltage[7])
+        ui.voltageProbe9Cb.setChecked(voltage[8])
+        ui.voltageProbe10Cb.setChecked(voltage[9])
+        ui.voltageProbe11Cb.setChecked(voltage[10])
+        
+        ui.currentProbe1Cb.setChecked(current[0])
+        ui.currentProbe2Cb.setChecked(current[1])
+        ui.currentProbe3Cb.setChecked(current[2])
+        ui.currentProbe4Cb.setChecked(current[3])
+        ui.currentProbe5Cb.setChecked(current[4])
+        ui.currentProbe6Cb.setChecked(current[5])
+        ui.currentProbe7Cb.setChecked(current[6])
+        ui.currentProbe8Cb.setChecked(current[7])
+        ui.currentProbe9Cb.setChecked(current[8])
+        ui.currentProbe10Cb.setChecked(current[9])
+        ui.currentProbe11Cb.setChecked(current[10])
+
+        ui.tempProbe1Cb.setChecked(temp[0])
+        ui.tempProbe2Cb.setChecked(temp[1])
+        ui.tempProbe3Cb.setChecked(temp[2])
+        ui.tempProbe4Cb.setChecked(temp[3])
+        ui.tempProbe5Cb.setChecked(temp[4])
+        ui.tempProbe6Cb.setChecked(temp[5])
+        ui.tempProbe7Cb.setChecked(temp[6])
+        ui.tempProbe8Cb.setChecked(temp[7])
+        ui.tempProbe9Cb.setChecked(temp[8])
+        ui.tempProbe10Cb.setChecked(temp[9])
+        ui.tempProbe11Cb.setChecked(temp[10])
+
+       
 
     ##################################################################################################
 
