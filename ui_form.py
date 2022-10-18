@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:/Users/emre.akgul/AppData/Local/Temp/formKdNhLs.ui'
+# Form implementation generated from reading ui file 'C:/Users/emre.akgul/AppData/Local/Temp/formZvxaOu.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.5
 #
@@ -201,6 +201,8 @@ class Ui_mainWindow(object):
         self.timeLayout.addWidget(self.time_lbl)
         self.intervalSlider = QtWidgets.QSlider(self.gridLayoutWidget)
         self.intervalSlider.setMinimumSize(QtCore.QSize(0, 25))
+        self.intervalSlider.setMaximum(120)
+        self.intervalSlider.setProperty("value", 0)
         self.intervalSlider.setOrientation(QtCore.Qt.Horizontal)
         self.intervalSlider.setObjectName("intervalSlider")
         self.timeLayout.addWidget(self.intervalSlider)
@@ -894,7 +896,7 @@ class Ui_mainWindow(object):
         self.homeButton.setObjectName("homeButton")
 
         self.retranslateUi(mainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
     def retranslateUi(self, mainWindow):
