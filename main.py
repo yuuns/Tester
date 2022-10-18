@@ -8,6 +8,7 @@ import loginMenu
 import settingsMenu
 import sys
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
+os.system('export DISPLAY=:0.0') # for vscode ssh connection
 
 
 def handleVisibleChanged():
@@ -59,6 +60,7 @@ def main():
     ## Settings page event ###########################################################################
     ui.settingsBackButton.clicked.connect(lambda: goPage(ui.homePage))
     ui.getButton.clicked.connect(lambda: getButton())
+    ui.intervalSlider.valueChanged.connect(lambda: ui.interval_lbl.setText(str(ui.intervalSlider.value())))
     ## List page event ###############################################################################
 
     ui.listBackButton.clicked.connect(lambda: goPage(ui.homePage))
@@ -89,7 +91,7 @@ def main():
         voltageDescription = data[0]["voltageDescription"]
         temp = data[0]["temp"]
         tempDescription = data[0]["tempDescription"]
-
+        time = data[0]["time"]
         def fill(self,data,type):
             if type == QLineEdit:
                 for i in range(self.count()-1):
@@ -106,7 +108,7 @@ def main():
         fill(ui.voltageDescriptionLayout,voltageDescription,QLineEdit)
         fill(ui.currentProbeLayout,current,QCheckBox)
         fill(ui.tempDescriptionLayout,tempDescription,QLineEdit)
-
+        ui.intervalSlider.setValue(time)
         
 
     ##################################################################################################
