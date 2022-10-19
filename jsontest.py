@@ -1,19 +1,21 @@
+from encodings import utf_8
 import json
-from collections import OrderedDict
 
-# Opening JSON file
-f = open('settings.json')
-  
-# returns JSON object as 
-# a dictionary
-data = json.load(f)
-  
-# Iterating through the json
-# list
+ocak4 = {
+            "voltage": [1,1,1,1,1,1,1,0,0,1,1],
+                "current": [1,1,1,0,0,1,1,1,1,1,1],
+                "voltageDescription": ["1","2","3","4","5","6","7","8","9","10","11"],
+                "temp": [1,1,1,1,1,1,1,1,1,1,1],
+                "tempDescription": ["1","2","3","4","5","6","7","8","9","10","11"],
+                "time": 100
+        }
 
-print(data['settings']['ocak1'][0]["voltageDescription"][0])
-# print(data['settings']['ocak2'][0]["volttage"])
-# for member in data['settings']:
-#     print(member)
-# Closing file
-f.close()
+with open('json_data.json','r') as js:
+    myData = json.load(js)
+print(type(myData["settings"]))
+
+yeniOcakAdi = "ocak6"
+myData["settings"][yeniOcakAdi] = ocak4
+
+with open('json_data.json','w') as js:
+    js.write(json.dumps(myData,indent=4))
