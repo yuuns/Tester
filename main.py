@@ -27,14 +27,15 @@ def handleVisibleChanged():
 def main():
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    MainWindow.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.MSWindowsFixedSizeDialogHint)
+    MainWindow.setWindowFlags(QtCore.Qt.MSWindowsFixedSizeDialogHint)
+    MainWindow.setWindowFlags(QtCore.Qt.FramelessWindowHint)
     ui = Ui_mainWindow()
     ui.setupUi(MainWindow)
 
     ## Set disable other menu before login
-    ui.settingsButton.setEnabled(1)
-    ui.listButton.setEnabled(0)
-    ui.graphButton.setEnabled(0)
+    ui.settingsButton.setEnabled(True)
+    ui.listButton.setEnabled(False)
+    ui.graphButton.setEnabled(False)
 
 
     ## Global Functions connections #########################################################################
@@ -43,7 +44,7 @@ def main():
 
     ## Home Page event ###############################################################################
     ui.homeButton.clicked.connect(lambda: goPage(ui.homePage))
-    ui.homeButton.setVisible(0)
+    ui.homeButton.setVisible(False)
     ui.userButton.clicked.connect(lambda: goPage(ui.loginPage))
     ui.settingsButton.clicked.connect(lambda: goPage(ui.settingPage))
     ui.listButton.clicked.connect(lambda: goPage(ui.listPage))
@@ -79,9 +80,9 @@ def main():
     def userStatus():
         status = loginMenu.login(MainWindow,ui.usernameText.text(),ui.userpasswordText.text())
         if status == QMessageBox.Ok:
-            ui.settingsButton.setEnabled(1)
-            ui.listButton.setEnabled(1)
-            ui.graphButton.setEnabled(1)
+            ui.settingsButton.setEnabled(True)
+            ui.listButton.setEnabled(True)
+            ui.graphButton.setEnabled(True)
             goPage(ui.homePage)
 
     def getButton():
