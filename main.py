@@ -8,7 +8,10 @@ import os
 import loginMenu
 import settingsMenu
 import sys
-import json
+
+import dialogtest
+
+
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 os.system('export DISPLAY=:0.0') # for vscode ssh connection
 
@@ -34,6 +37,7 @@ def main():
     ui = Ui_mainWindow()
     ui.setupUi(MainWindow)
 
+    
     ## Set disable other menu before login
     ui.settingsButton.setEnabled(True)
     ui.listButton.setEnabled(False)
@@ -90,33 +94,33 @@ def main():
 
     def getButton():
         data = settingsMenu.popup(MainWindow)
-        dataDict = dict(data)
-        voltage = dataDict["voltage"]
-        current = dataDict["current"]
-        voltageDescription = dataDict["voltageDescription"]
-        temp = dataDict["temp"]
-        tempDescription = dataDict["tempDescription"]
-        time = dataDict["time"]
-        def fill(self,data,type):
-            if type == QLineEdit:
-                for i in range(self.count()-1):
-                    self.itemAt(i+1).widget().setText(data[i])
-            elif type == QCheckBox:
-                for i in range(self.count()-1):
-                    self.itemAt(i+1).widget().setChecked(data[i]) 
-            else: 
-                print("wrong type")
-                return False 
+        if data == []:
+            return 0
+        else:
+            dataDict = dict(data)
+            voltage = dataDict["voltage"]
+            current = dataDict["current"]
+            voltageDescription = dataDict["voltageDescription"]
+            temp = dataDict["temp"]
+            tempDescription = dataDict["tempDescription"]
+            time = dataDict["time"]
+            def fill(self,data,type):
+                if type == QLineEdit:
+                    for i in range(self.count()-1):
+                        self.itemAt(i+1).widget().setText(data[i])
+                elif type == QCheckBox:
+                    for i in range(self.count()-1):
+                        self.itemAt(i+1).widget().setChecked(data[i]) 
+                else: 
+                    print("wrong type")
+                    return False 
 
-        fill(ui.voltageProbeLayout,voltage,QCheckBox)
-        fill(ui.tempProbeLayout,temp,QCheckBox)
-        fill(ui.voltageDescriptionLayout,voltageDescription,QLineEdit)
-        fill(ui.currentProbeLayout,current,QCheckBox)
-        fill(ui.tempDescriptionLayout,tempDescription,QLineEdit)
-        ui.intervalSlider.setValue(time)
-
-
-
+            fill(ui.voltageProbeLayout,voltage,QCheckBox)
+            fill(ui.tempProbeLayout,temp,QCheckBox)
+            fill(ui.voltageDescriptionLayout,voltageDescription,QLineEdit)
+            fill(ui.currentProbeLayout,current,QCheckBox)
+            fill(ui.tempDescriptionLayout,tempDescription,QLineEdit)
+            ui.intervalSlider.setValue(time)
 
     def saveButton():
         def pull(self,type):
@@ -132,11 +136,13 @@ def main():
             return data 
         data = dict()
         data["voltage"] = pull(ui.voltageProbeLayout,QCheckBox)
-        data["curent"] = pull(ui.currentProbeLayout,QCheckBox)
+        data["current"] = pull(ui.currentProbeLayout,QCheckBox)
         data["voltageDescription"] = pull(ui.voltageDescriptionLayout,QLineEdit)
         data["temp"] = pull(ui.tempProbeLayout,QCheckBox)
         data["tempDescription"] = pull(ui.tempDescriptionLayout,QLineEdit)
         data["time"] = ui.intervalSlider.value()
+        #dialogtest.opendialog(MainWindow)
+
         settingsMenu.savePopup(MainWindow,data)
 
 
