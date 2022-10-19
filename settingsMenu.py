@@ -12,6 +12,11 @@ def popup(self):
         return settings[name]
     else:
         return []
+def savePopup(self,data):
+    text, ok = QInputDialog.getText(self, 'Kayıt Adı girin', 'Kayıt Adı')
+    if ok:
+        jsonhandler.saveJson(text,data,"./settings.json")
+        return True
 
 
     

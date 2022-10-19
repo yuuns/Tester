@@ -25,9 +25,16 @@ def Login(path,username,password):
         else:
             return False
 
-def saveJson():
+def saveJson(title,data,path):
+    with open(path,'r') as js:
+        myData = json.load(js)
+        print(type(myData["settings"]))
+    myData["settings"][title] = data
 
-    return True
+    with open(path,'w') as js:
+        js.write(json.dumps(myData,indent=4))
+        
+
 
 def readJson(path,parameter):
     path_to_json = path

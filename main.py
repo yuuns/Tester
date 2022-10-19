@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
-from PyQt5.QtWidgets import QMessageBox,QLineEdit,QCheckBox
+from PyQt5.QtWidgets import QMessageBox,QLineEdit,QCheckBox,QInputDialog
 from PyQt5.QtGui import QPixmap
 
 from ui_form import Ui_mainWindow
@@ -7,6 +7,7 @@ import os
 import loginMenu
 import settingsMenu
 import sys
+import json
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 os.system('export DISPLAY=:0.0') # for vscode ssh connection
 
@@ -62,6 +63,7 @@ def main():
     ui.settingsBackButton.clicked.connect(lambda: goPage(ui.homePage))
     ui.getButton.clicked.connect(lambda: getButton())
     ui.intervalSlider.valueChanged.connect(lambda: ui.interval_lbl.setText(str(ui.intervalSlider.value())))
+    ui.saveButton.clicked.connect(lambda: saveButton())
     ## List page event ###############################################################################
 
     ui.listBackButton.clicked.connect(lambda: goPage(ui.homePage))
@@ -87,12 +89,13 @@ def main():
 
     def getButton():
         data = settingsMenu.popup(MainWindow)
-        voltage = data[0]["voltage"]
-        current = data[0]["current"]
-        voltageDescription = data[0]["voltageDescription"]
-        temp = data[0]["temp"]
-        tempDescription = data[0]["tempDescription"]
-        time = data[0]["time"]
+        dataDict = dict(data)
+        voltage = dataDict["voltage"]
+        current = dataDict["current"]
+        voltageDescription = dataDict["voltageDescription"]
+        temp = dataDict["temp"]
+        tempDescription = dataDict["tempDescription"]
+        time = dataDict["time"]
         def fill(self,data,type):
             if type == QLineEdit:
                 for i in range(self.count()-1):
@@ -110,7 +113,33 @@ def main():
         fill(ui.currentProbeLayout,current,QCheckBox)
         fill(ui.tempDescriptionLayout,tempDescription,QLineEdit)
         ui.intervalSlider.setValue(time)
-        
+
+
+
+
+    def saveButton():
+        def pull(self,type):
+            data = list()
+            if type == QLineEdit:
+                for i in range(self.count()-1):
+                    data.append(self.itemAt(i+1).widget().text())
+            elif type == QCheckBox:
+                for i in range(self.count()-1):
+                    data.append(int(self.itemAt(i+1).widget().isChecked()))
+            else: 
+                print("wrong type")
+            return data 
+        data = dict()
+        data["voltage"] = pull(ui.voltageProbeLayout,QCheckBox)
+        data["curent"] = pull(ui.currentProbeLayout,QCheckBox)
+        data["voltageDescription"] = pull(ui.voltageDescriptionLayout,QLineEdit)
+        data["temp"] = pull(ui.tempProbeLayout,QCheckBox)
+        data["tempDescription"] = pull(ui.tempDescriptionLayout,QLineEdit)
+        data["time"] = ui.intervalSlider.value()
+        data = json.dumps(data)
+        print(data)       
+        settingsMenu.savePopup(MainWindow,data)
+
 
     ##################################################################################################
 
