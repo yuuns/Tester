@@ -1,3 +1,4 @@
+from token import ENCODING
 from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
 from PyQt5.QtWidgets import QMessageBox,QLineEdit,QCheckBox,QInputDialog
 from PyQt5.QtGui import QPixmap
@@ -136,8 +137,6 @@ def main():
         data["temp"] = pull(ui.tempProbeLayout,QCheckBox)
         data["tempDescription"] = pull(ui.tempDescriptionLayout,QLineEdit)
         data["time"] = ui.intervalSlider.value()
-        data = json.dumps(data)
-        print(data)       
         settingsMenu.savePopup(MainWindow,data)
 
 

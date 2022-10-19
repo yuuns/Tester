@@ -13,7 +13,7 @@ ocak4 = {
 with open('json_data.json','r') as js:
     myData = json.load(js)
 print(type(myData["settings"]))
-
+# myData={"settings":{}}
 yeniOcakAdi = "ocak6"
 myData["settings"][yeniOcakAdi] = ocak4
 

@@ -34,7 +34,7 @@ def saveJson(title,data,path):
     myData["settings"][title] = data
 
     with open(path,'w') as js:
-        js.write(json.dumps(myData,indent=4,ensure_ascii=False,encoding='utf-8'))
+        js.write(json.dumps(myData,indent=4,ensure_ascii=False))
         
 
 
