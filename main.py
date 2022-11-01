@@ -1,15 +1,12 @@
 from token import ENCODING
 from PyQt5 import QtCore, QtGui, QtWidgets,QtWidgets
-from PyQt5.QtWidgets import QMessageBox,QLineEdit,QCheckBox,QInputDialog
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QMessageBox,QLineEdit,QCheckBox
 
 from ui_form import Ui_mainWindow
 import os
 import loginMenu
 import settingsMenu
 import sys
-
-import dialogtest
 
 
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
